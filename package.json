@@ -28,11 +28,11 @@
     "sass", "less", "stylus", "markdown", "jade", "ejs", "coffeescript", "pug", "donejs"
   ],
   "homepage": "http://dspeed.eu",
-  "bugs": "http://github.com/frank-dspeed/harp/issues",
+  "bugs": "http://github.com/frank-dspeed/dssrv/issues",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/frank-dspeed/harp.git"
+    "url": "https://github.com/frank-dspeed/dssrv.git"
   },
   "dependencies": {
     "async": "2.0.1",
