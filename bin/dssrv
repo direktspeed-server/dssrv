@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+// needs reading of $PWD for accepting .
 var nodePath      = require("path")
 var program       = require("commander")
 var fse           = require("fs-extra")

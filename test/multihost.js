@@ -22,7 +22,8 @@ describe("multihost", function(){
 
   it("should return list of apps", function(done){
     request("http://localhost:" + port + "/", function(e,r,b){
-      r.statusCode.should.eql(200)
+      // r.statusCode.should.eql(200)
+      b.should.match(new RegExp('http://app.dssrv.nu:' + port))
       $ = cherio.load(b);
       urls = $(".projects A");
       $(".project-name").length.should.eql(4)
@@ -35,7 +36,7 @@ describe("multihost", function(){
     for (var i = 0; i < urls.length; i++) {
       sites.push($(urls[i]).attr("href"));
     }
-    sites.should.containEql('http://app.dssrv.nu:' + port);
+    sites.should.matchAny(new RegExp('http://app.dssrv.nu:' + port))
     done();
   });
 

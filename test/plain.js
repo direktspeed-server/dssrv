@@ -105,6 +105,7 @@ describe("plain", function(){
     it("should have custom 404 page that is raw HTML", function(done){
       fs.readFile(path.join(outputPath, "404.html"), function(err, contents){
         request('http://localhost:8103/404.html', function(e, r, b){
+          b.should.be.an.String().and.not.empty().and.match(new RegExp("<h1>404 in HTML"))
           r.statusCode.should.eql(200)
           b.should.eql(contents.toString())
           request('http://localhost:8103/missing/path', function(e, r, b){
@@ -119,9 +120,11 @@ describe("plain", function(){
   })
 
   after(function(done){
+
     exec("rm -rf " + output, function(){
       done()
     })
+
   })
 
 })

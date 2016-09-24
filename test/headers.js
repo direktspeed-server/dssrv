@@ -3,8 +3,6 @@ var request     = require('request')
 var path        = require('path')
 var dssrv        = require('../')
 
-
-
 describe("headers", function(){
   var projectPath = path.join(__dirname, "apps/headers")
   var port        = 8901
@@ -38,6 +36,7 @@ describe("headers", function(){
       r.statusCode.should.eql(200)
       r.headers.should.have.property("content-type", "application/javascript")
       r.headers.should.have.property("content-length")
+      console.log(r.headers)
       done()
     })
   })

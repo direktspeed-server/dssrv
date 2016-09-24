@@ -104,7 +104,7 @@ describe("helpers", function(){
     })
 
     it("should replace values like $foo with process.env.foo", function(done){
-      process.env.HARP_BASIC_AUTH = "jabberwocky:skrillex"
+      process.env.DSSRV_BASIC_AUTH = "jabberwocky:skrillex"
       var cfg = helpers.setup(path.join(__dirname, "apps", "envy"))
       cfg.should.have.property("config")
       cfg.should.have.property("projectPath")
