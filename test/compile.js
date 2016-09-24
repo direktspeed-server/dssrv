@@ -3,7 +3,7 @@ var request     = require('request')
 var path        = require("path")
 var fs          = require("fs")
 var exec        = require("child_process").exec
-var harp        = require("../");
+var dssrv        = require("../");
 
 describe("compile", function(){
 
@@ -12,7 +12,7 @@ describe("compile", function(){
     var outputPath  = path.join(__dirname, "out/compile-basic")
 
     it("should compile", function(done){
-      harp.compile(projectPath, outputPath, function(error){
+      dssrv.compile(projectPath, outputPath, function(error){
         should.not.exist(error)
         done()
       })
@@ -67,7 +67,7 @@ describe("compile", function(){
 
 
     it("should compile", function(done){
-      harp.compile(projectPath, outputPath, function(error){
+      dssrv.compile(projectPath, outputPath, function(error){
         should.not.exist(error)
         done()
       })
@@ -105,7 +105,7 @@ describe("compile", function(){
 
 
     it("should compile", function(done){
-      harp.compile(projectPath, outputPath, function(error){
+      dssrv.compile(projectPath, outputPath, function(error){
         should.not.exist(error)
         done()
       })

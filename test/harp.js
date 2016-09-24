@@ -2,12 +2,12 @@ var nixt = require('nixt')
 var path = require('path')
 var fs = require('fs-extra')
 var should = require('should')
-var harp = require('../')
+var dssrv = require('../')
 var exec = require("child_process").exec
 
-describe("harp init", function() {
+describe("dssrv init", function() {
 
-  var outputPath  = path.join(__dirname, "out/harp")
+  var outputPath  = path.join(__dirname, "out/dssrv")
 
   beforeEach(function(done){
     fs.remove(outputPath, function(err){
@@ -18,10 +18,10 @@ describe("harp init", function() {
   it("downloads the default boilerplate if it's not set", function(done) {
     this.timeout(10000);
     nixt()
-      .run('node ./bin/harp init ./test/out/harp') // Tests don't work when this has a platform-specific path passed in, but it does work
-      // .run('node .' + path.sep + 'bin' + path.sep + 'harp init ' + outputPath)
-      // .stdout(/Downloading.*harp-boilerplates\/default/)
-      // .stdout(/Initialized project at \test/out\/harp/)
+      .run('node ./bin/dssrv init ./test/out/dssrv') // Tests don't work when this has a platform-specific path passed in, but it does work
+      // .run('node .' + path.sep + 'bin' + path.sep + 'dssrv init ' + outputPath)
+      // .stdout(/Downloading.*dssrv-boilerplates\/default/)
+      // .stdout(/Initialized project at \test/out\/dssrv/)
       .end(function () {
         fs.existsSync(path.join(outputPath, '404.jade')).should.not.be.false
         fs.existsSync(path.join(outputPath, '_layout.jade')).should.not.be.false
@@ -31,11 +31,11 @@ describe("harp init", function() {
       })
   })
 
-  it("defaults to the harp-boilerplates github org when given a shorthand pattern", function(done) {
+  it("defaults to the dssrv-boilerplates github org when given a shorthand pattern", function(done) {
     this.timeout(10000);
     nixt()
-      .run('node ./bin/harp init ./test/out/harp -b hb-start')
-      // .stdout(/Downloading.*harp-boilerplates\/hb-start/)
+      .run('node ./bin/dssrv init ./test/out/dssrv -b hb-start')
+      // .stdout(/Downloading.*dssrv-boilerplates\/hb-start/)
       .end(function () {
         fs.existsSync(path.join(outputPath, 'public', 'index.jade')).should.not.be.false
         fs.existsSync(path.join(outputPath, 'README.md')).should.not.be.false
@@ -46,8 +46,8 @@ describe("harp init", function() {
   it("honors -b option when given a user/repo pattern", function(done) {
     this.timeout(10000);
     nixt()
-      .run('node ./bin/harp init ./test/out/harp -b zeke/harp-sample')
-      // .stdout(/Downloading.*zeke\/harp-sample/)
+      .run('node ./bin/dssrv init ./test/out/dssrv -b zeke/dssrv-sample')
+      // .stdout(/Downloading.*zeke\/dssrv-sample/)
       .end(function () {
         fs.existsSync(path.join(outputPath, 'README.md')).should.not.be.false
         fs.existsSync(path.join(outputPath, 'index.jade')).should.not.be.false
@@ -57,10 +57,10 @@ describe("harp init", function() {
 
   it("doesn't overwrite an existing directory", function(done) {
     nixt()
-      .run('node ./bin/harp init ./test/out/harp')
+      .run('node ./bin/dssrv init ./test/out/dssrv')
       .end(function() {
         nixt()
-          .run('node ./bin/harp harp init ./test/out/harp -b hb-default-sass')
+          .run('node ./bin/dssrv dssrv init ./test/out/dssrv -b hb-default-sass')
           .end(function() {
             should.not.exist(fs.exists(path.join(outputPath, 'main.sass')))
             done()

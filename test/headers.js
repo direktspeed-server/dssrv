@@ -1,7 +1,7 @@
 var should      = require("should")
 var request     = require('request')
 var path        = require('path')
-var harp        = require('../')
+var dssrv        = require('../')
 
 
 
@@ -10,7 +10,7 @@ describe("headers", function(){
   var port        = 8901
 
   before(function(done){
-    harp.server(projectPath, { port: port }, done)
+    dssrv.server(projectPath, { port: port }, done)
   })
 
   // static

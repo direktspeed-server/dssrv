@@ -1,10 +1,10 @@
-# Harp
+# DIREKTSPEED Server
 
 > zero-configuration web server with built in pre-processing
 
-### What is Harp?
+### What is DIREKTSPEED Server?
 
-Harp is a static web server that also serves Jade, Markdown, EJS, Less, Stylus, Sass, and CoffeeScript **as** HTML, CSS, and JavaScript without any configuration. It supports the beloved layout/partial paradigm and it has flexible metadata and global objects for traversing the file system and injecting custom data into templates. Optionally, Harp can also compile your project down to static assets for hosting behind any valid HTTP server.
+DIREKTSPEED Server is a static web server that also serves Jade, Markdown, EJS, Less, Stylus, Sass, and CoffeeScript **as** HTML, CSS, and JavaScript without any configuration. It supports the beloved layout/partial paradigm and it has flexible metadata and global objects for traversing the file system and injecting custom data into templates. Optionally, DIREKTSPEED Server can also compile your project down to static assets for hosting behind any valid HTTP server.
 
 ### Why?
 
@@ -37,7 +37,7 @@ Pre-compilers are becoming extremely powerful and shipping front-ends as static 
 - **Source Code** - [github.com/sintaxi/harp](https://github.com/sintaxi/harp)
 
 
-Authored and maintained by [@sintaxi](http://twitter.com/sintaxi). Made for the [@HarpPlatform](http://twitter.com/HarpPlatform).
+Authored and maintained by [@sintaxi](http://twitter.com/sintaxi). Made for the [@DIREKTSPEED ServerPlatform](http://twitter.com/DIREKTSPEED ServerPlatform).
 
 ---
 
@@ -52,13 +52,13 @@ Creating a new harp application is a breeze...
     harp init myproj
     harp server myproj
 
-Your Harp application is now running at [http://localhost:9000]()
+Your DIREKTSPEED Server application is now running at [http://localhost:9000]()
 
 ---
 
 ## Documentation
 
-Harp can be used as a library or as a command line utility.
+DIREKTSPEED Server can be used as a library or as a command line utility.
 
 ### CLI Usage
 

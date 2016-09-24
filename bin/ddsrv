@@ -11,7 +11,7 @@ var harp          = require("../")
 var output = function(msg){
   var v = pkg.version
   console.log("------------")
-  console.log("Harp v" + v + " – Chloi Inc. 2012–2015")
+  console.log("DIREKTSPEED Server v" + v + " – Chloi Inc. 2012–2015")
   if(msg){
     console.log(msg)
     console.log("Press Ctl+C to stop the server")
@@ -24,9 +24,9 @@ program
 
 program
   .command("init [path]")
-  .usage("initializes a new Harp project in the current directory.\n  See available boilerplates at https://github.com/harp-boilerplates")
+  .usage("initializes a new DIREKTSPEED Server project in the current directory.\n  See available boilerplates at https://github.com/harp-boilerplates")
   .option("-b, --boilerplate <github-username/repo>", "use a github repo as a boilerplate", "harp-boilerplates/default")
-  .description("Initialize a new Harp project in current directory")
+  .description("Initialize a new DIREKTSPEED Server project in current directory")
   .action(function(path, program){
     var projectPath     = nodePath.resolve(process.cwd(), path || "")
     var boilerplatePath = nodePath.resolve(__dirname, "..", "lib", "default_boilerplate")
@@ -78,8 +78,8 @@ program
   .command("server [path]")
   .option("-i, --ip <ip>", "Specify IP to bind to")
   .option("-p, --port <port>", "Specify a port to listen on")
-  .usage("starts a Harp server in current directory, or in the specified directory.")
-  .description("Start a Harp server in current directory")
+  .usage("starts a DIREKTSPEED Server server in current directory, or in the specified directory.")
+  .description("Start a DIREKTSPEED Server server in current directory")
   .action(function(path, program){
     var projectPath = nodePath.resolve(process.cwd(), path || "")
     var ip          = program.ip || '0.0.0.0'
@@ -99,8 +99,8 @@ program
 program
   .command("multihost [path]")
   .option("-p, --port <port>", "Specify a port to listen on")
-  .usage("starts a Harp server to host a directory of Harp projects.")
-  .description("Start a Harp server to host a directory of Harp projects")
+  .usage("starts a DIREKTSPEED Server server to host a directory of DIREKTSPEED Server projects.")
+  .description("Start a DIREKTSPEED Server server to host a directory of DIREKTSPEED Server projects")
   .action(function(path, program){
     var projectPath = nodePath.resolve(process.cwd(), path || "")
     var port        = program.port || 9000
@@ -117,7 +117,7 @@ program
 program
   .command("compile [projectPath] [outputPath]")
   .option("-o, --output <path>", "Specify the output directory for compiled assets (relative to project path)")
-  .usage("compile your project files to static assets (HTML, JS and CSS). \n  Use this command if you want to host your application without using the Harp web server.")
+  .usage("compile your project files to static assets (HTML, JS and CSS). \n  Use this command if you want to host your application without using the DIREKTSPEED Server web server.")
   .description("Compile project to static assets (HTML, JS and CSS)")
   .action(function(projectPath, outputPath, program){
 

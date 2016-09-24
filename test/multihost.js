@@ -3,7 +3,7 @@ var request     = require('request')
 var path        = require("path")
 var fs          = require("fs")
 var exec        = require("child_process").exec
-var harp        = require("../");
+var dssrv        = require("../");
 var cherio      = require("cheerio");
 
 describe("multihost", function(){
@@ -15,7 +15,7 @@ describe("multihost", function(){
   var urls = [];
 
   before(function(done){
-    harp.multihost(projectPath, { port: port }, function(errors){
+    dssrv.multihost(projectPath, { port: port }, function(errors){
       done();
     });
   });
@@ -30,12 +30,12 @@ describe("multihost", function(){
     });
   });
 
-  it("harp-apps should be served on a compatible URL", function(done) {
+  it("dssrv-apps should be served on a compatible URL", function(done) {
     var sites = [];
     for (var i = 0; i < urls.length; i++) {
       sites.push($(urls[i]).attr("href"));
     }
-    sites.should.containEql('http://app.harp.nu:' + port);
+    sites.should.containEql('http://app.dssrv.nu:' + port);
     done();
   });
 
