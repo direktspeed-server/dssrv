@@ -6,12 +6,12 @@ var fse           = require("fs-extra")
 var downloadRepo  = require("download-github-repo")
 var pkg           = require("../package.json")
 var helpers       = require("../lib/helpers")
-var harp          = require("../")
+var dssrv         = require("../")
 
 var output = function(msg){
   var v = pkg.version
   console.log("------------")
-  console.log("DIREKTSPEED Server v" + v + " – Chloi Inc. 2012–2015")
+  console.log("DIREKTSPEED Server v" + v + " – DIREKTSPEED. 2015–2017")
   if(msg){
     console.log(msg)
     console.log("Press Ctl+C to stop the server")
@@ -24,8 +24,8 @@ program
 
 program
   .command("init [path]")
-  .usage("initializes a new DIREKTSPEED Server project in the current directory.\n  See available boilerplates at https://github.com/harp-boilerplates")
-  .option("-b, --boilerplate <github-username/repo>", "use a github repo as a boilerplate", "harp-boilerplates/default")
+  .usage("initializes a new DIREKTSPEED Server project in the current directory.\n  See available boilerplates at https://github.com/dssrv-boilerplates")
+  .option("-b, --boilerplate <github-username/repo>", "use a github repo as a boilerplate", "dssrv-boilerplates/default")
   .description("Initialize a new DIREKTSPEED Server project in current directory")
   .action(function(path, program){
     var projectPath     = nodePath.resolve(process.cwd(), path || "")
@@ -33,7 +33,7 @@ program
     var repo            = program.boilerplate
 
     // Assume `harp-boilerplates` github org if boilerplate doesn't contain a slash
-    repo.match(/\//) || (repo = "harp-boilerplates/"+repo)
+    repo.match(/\//) || (repo = "dssrv-boilerplates/"+repo)
 
     var done = function() {
       console.log("Initialized project at", projectPath)
@@ -78,13 +78,13 @@ program
   .command("server [path]")
   .option("-i, --ip <ip>", "Specify IP to bind to")
   .option("-p, --port <port>", "Specify a port to listen on")
-  .usage("starts a DIREKTSPEED Server server in current directory, or in the specified directory.")
-  .description("Start a DIREKTSPEED Server server in current directory")
+  .usage("starts a DIREKTSPEED Server in current directory, or in the specified directory.")
+  .description("Start a DIREKTSPEED Server in current directory")
   .action(function(path, program){
     var projectPath = nodePath.resolve(process.cwd(), path || "")
     var ip          = program.ip || '0.0.0.0'
     var port        = program.port || 9000
-    harp.server(projectPath, { ip: ip, port: port }, function(){
+    dssrv.server(projectPath, { ip: ip, port: port }, function(){
       var address = ''
       if(ip == '0.0.0.0' || ip == '127.0.0.1') {
         address = 'localhost'
@@ -99,16 +99,16 @@ program
 program
   .command("multihost [path]")
   .option("-p, --port <port>", "Specify a port to listen on")
-  .usage("starts a DIREKTSPEED Server server to host a directory of DIREKTSPEED Server projects.")
-  .description("Start a DIREKTSPEED Server server to host a directory of DIREKTSPEED Server projects")
+  .usage("starts a DIREKTSPEED Server to host a directory of DIREKTSPEED Server projects.")
+  .description("Start a DIREKTSPEED Server to host a directory of DIREKTSPEED Server projects")
   .action(function(path, program){
     var projectPath = nodePath.resolve(process.cwd(), path || "")
     var port        = program.port || 9000
-    harp.multihost(projectPath, { port: port }, function(){
+    dssrv.multihost(projectPath, { port: port }, function(){
       if(port == "80"){
-        var loc = "http://harp.nu"
+        var loc = "http://dssrv.nu"
       }else{
-        var loc = "http://harp.nu:" + port
+        var loc = "http://dssrv.nu:" + port
       }
       output("Your server is hosting multiple projects at " + loc)
     })
@@ -143,7 +143,7 @@ program
       outputPath = nodePath.resolve(projectPath, (program.output || "www"))
     }
 
-    harp.compile(projectPath, outputPath, function(errors, output){
+    dssrv.compile(projectPath, outputPath, function(errors, output){
       if(errors) {
         console.log(JSON.stringify(errors, null, 2))
         process.exit(1)
@@ -152,7 +152,7 @@ program
   })
 
 program.on("--help", function(){
-  console.log("  Use 'harp <command> --help' to get more information or visit http://harpjs.com/ to learn more.")
+  console.log("  Use 'harp <command> --help' to get more information or visit http://server.dspeed.eu/ to learn more.")
   console.log('')
 })
 
