@@ -1,0 +1,31 @@
+{
+	"folders":
+	[
+		{
+      "file_exclude_patterns": [
+        "*.sublime-*"
+      ],
+      "folder_exclude_patterns": [
+        ".*",
+        "kirby",
+        "panel",
+        "node_modules",
+        "bower_components"
+      ],
+      "path": "."
+    },
+    {
+      "file_exclude_patterns": [
+        "*.sublime-*"
+      ],
+      "folder_exclude_patterns": [
+        ".*",
+        "kirby",
+        "panel",
+        "node_modules",
+        "bower_components"
+      ],
+      "path": "/Users/lunelson/Git/packages/terraform"
+    }
+  ]
+}
