@@ -8,7 +8,7 @@ describe("headers", function(){
   var port        = 8901
 
   before(function(done){
-    dssrv.server(projectPath, { port: port }, done)
+    dssrv.server(projectPath, { port: port, config: { basicAuth: [] } }, done)
   })
 
   // static
@@ -63,9 +63,12 @@ describe("headers", function(){
 
   it("should be correct with a valid Markdown file", function(done){
     request("http://localhost:" + port + "/valid-markdown.html", function(e, r, b){
-      r.statusCode.should.eql(200)
+      
       r.headers.should.have.property("content-type", "text/html; charset=UTF-8")
       r.headers.should.have.property("content-length")
+      console.log(e,b)
+      r.statusCode.should.eql(200)
+      
       done()
     })
   })

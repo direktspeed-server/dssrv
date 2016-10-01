@@ -1,4 +1,5 @@
-{
+module.exports = ps a{
+  "basicAuth": [],
   "globals": {
     "brand" : "Kitchen Sink",
     "name"  : "Brock Whitten",
