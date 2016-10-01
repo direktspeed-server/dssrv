@@ -2,7 +2,7 @@ var nixt = require('nixt')
 var path = require('path')
 var fs = require('fs-extra')
 var should = require('should')
-var dssrv = require('../')
+var dssrv = require('../')()
 var exec = require("child_process").exec
 
 describe("dssrv init", function() {

@@ -1,7 +1,7 @@
 var should      = require("should")
 var request     = require('request')
 var path        = require('path')
-var dssrv        = require('../')
+var dssrv        = require('../')()
 
 
 

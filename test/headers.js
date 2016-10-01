@@ -1,7 +1,7 @@
 var should      = require("should")
 var request     = require('request')
 var path        = require('path')
-var dssrv        = require('../')
+var dssrv        = require('../')()
 
 describe("headers", function(){
   var projectPath = path.join(__dirname, "apps/headers")

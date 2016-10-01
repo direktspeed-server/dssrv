@@ -3,7 +3,7 @@ var request     = require('request')
 var path        = require("path")
 var fs          = require("fs")
 var exec        = require("child_process").exec
-var dssrv        = require("../")
+var dssrv        = require("../")()
 
 describe("basic", function(){
   var projectPath = path.join(__dirname, "apps/basic")
@@ -19,6 +19,7 @@ describe("basic", function(){
   })
 
   it("should have node version in config", function(done){
+    console.log(config.dssrv_version)
     config.should.have.property("dssrv_version")
     done()
   })
@@ -28,6 +29,7 @@ describe("basic", function(){
     staticGlobals.should.have.property("environment", "production")
     staticGlobals.should.have.property("public")
     request('http://localhost:8100/globals.json', function (e, r, b) {
+      console.log(e,b)
       r.statusCode.should.eql(200)
       var dynamicGlobals = JSON.parse(b)
       dynamicGlobals.should.have.property("environment", "development")

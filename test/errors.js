@@ -3,7 +3,7 @@ var request     = require('request')
 var path        = require("path")
 var fs          = require("fs")
 var exec        = require("child_process").exec
-var dssrv        = require("../")
+var dssrv        = require("../")()
 
 describe("errors", function(){
 

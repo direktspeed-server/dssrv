@@ -3,7 +3,7 @@ var request     = require('request')
 var path        = require("path")
 var fs          = require("fs")
 var exec        = require("child_process").exec
-var dssrv        = require("../")
+var dssrv        = require("../")()
 
 describe("slash-indifference", function(){
   var projectPath = path.join(__dirname, "apps/slash-indifference")

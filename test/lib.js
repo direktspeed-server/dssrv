@@ -1,5 +1,5 @@
 var should      = require("should")
-var dssrv = require('../lib');
+var dssrv = require('../lib')();
 var middleware = require('../lib/middleware');
 
 describe("dssrv as a library", function() {

@@ -1,4 +1,15 @@
 #!/usr/bin/env node
+/*
+ * @page index DSSRV
+ * @tag home
+ *
+ * ###DIREKTSPEED Server
+ *  
+ * Our DSSRV only has two classes:
+ *  
+ * * server 
+ * * server 
+ */
 // needs reading of $PWD for accepting .
 var nodePath      = require("path")
 var program       = require("commander")
@@ -6,7 +17,7 @@ var fse           = require("fs-extra")
 var downloadRepo  = require("download-github-repo")
 var pkg           = require("../package.json")
 var helpers       = require("../lib/helpers")
-var dssrv         = require("../")
+var dssrv         = require("../")()
 
 var output = function(msg){
   var v = pkg.version
@@ -78,13 +89,19 @@ program
   .command("server [path]")
   .option("-i, --ip <ip>", "Specify IP to bind to")
   .option("-p, --port <port>", "Specify a port to listen on")
+  .option("-c, --config <path>", "Specify a port to listen on")
   .usage("starts a DIREKTSPEED Server in current directory, or in the specified directory.")
   .description("Start a DIREKTSPEED Server in current directory")
   .action(function(path, program){
     var projectPath = nodePath.resolve(process.cwd(), path || "")
     var ip          = program.ip || '0.0.0.0'
     var port        = program.port || 9000
-    dssrv.server(projectPath, { ip: ip, port: port }, function(){
+    var options = { 
+      ip: ip, 
+      port: port 
+    }
+    
+    dssrv.server(projectPath, options, function(){
       var address = ''
       if(ip == '0.0.0.0' || ip == '127.0.0.1') {
         address = 'localhost'
@@ -98,13 +115,19 @@ program
 
 program
   .command("multihost [path]")
+  .option("-i, --ip <ip>", "Specify IP to bind to")
   .option("-p, --port <port>", "Specify a port to listen on")
+  .option("-c, --config <path>", "Specify a port to listen on")
   .usage("starts a DIREKTSPEED Server to host a directory of DIREKTSPEED Server projects.")
   .description("Start a DIREKTSPEED Server to host a directory of DIREKTSPEED Server projects")
   .action(function(path, program){
     var projectPath = nodePath.resolve(process.cwd(), path || "")
     var port        = program.port || 9000
-    dssrv.multihost(projectPath, { port: port }, function(){
+    var options = { 
+      port: port 
+    }
+    
+    dssrv.multihost(projectPath, options, function(){
       if(port == "80"){
         var loc = "http://dssrv.nu"
       }else{

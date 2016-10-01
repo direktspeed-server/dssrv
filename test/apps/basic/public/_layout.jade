@@ -11,9 +11,9 @@ html
   body
     #header
       h1= brand
-      include shared/_nav
+      include shared/_nav.jade
       != yield
       a(href="#", onclick="showDebug()") open debug panel
       .well#debug(style="display:none;")
-        != partial("shared/_debug")
+        != partial("shared/_debug.jade")
 
