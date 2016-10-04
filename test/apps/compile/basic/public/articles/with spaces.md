@@ -1,1 +1,0 @@
-foo article with spaces

@@ -1,5 +1,0 @@
-{
-  "foo": "bar",
-  "basicAuth": "$DSSRV_BASIC_AUTH",
-  "optionalThing": "$OPTIONAL_THING"
-}

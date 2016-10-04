@@ -1,56 +1,58 @@
 # DIREKTSPEED Server
 
-> zero-configuration web server with built in pre-processing
+
+# add Installer Method via place symlink or anything to to ./target 
+# this way we can start docker containers and other stuff that moves files to target
+# we can also use target as exchange point via volumes from.
+
+> zero-configuration Server Configuration Abstraction Fully Modular
 
 ### What is DIREKTSPEED Server?
 
-DIREKTSPEED Server is a static web server that also serves Jade, Markdown, EJS, Less, Stylus, Sass, and CoffeeScript **as** HTML, CSS, and JavaScript without any configuration. It supports the beloved layout/partial paradigm and it has flexible metadata and global objects for traversing the file system and injecting custom data into templates. Optionally, DIREKTSPEED Server can also compile your project down to static assets for hosting behind any valid HTTP server.
+DIREKTSPEED Server is a Server Configuration Abstraction Layer that is Modular 
 
-### Why?
+it can for example run dssrv-srv-prerender to be used as Static Webserver that also serves DoneJS,Pug, Jade, Markdown, EJS, Less, Stylus, Sass, and CoffeeScript **as** HTML, CSS, and JavaScript without any configuration. It supports the beloved layout/partial paradigm and it has flexible metadata and global objects for traversing the file system and injecting custom data into templates. Optionally, dssrv-srv-prerender can also compile your project down to static assets for hosting behind any valid HTTP server.
 
 Pre-compilers are becoming extremely powerful and shipping front-ends as static assets has many upsides. It's simple, it's easy to maintain, it's low risk, easy to scale, and requires low cognitive overhead. I wanted a lightweight web server that was powerful enough for me to abandon web frameworks for dead simple front-end publishing.
+
+### Why?
+Because today you need as Developer and Production User ways to maintain your projects.
+on a Project base not on a per software base.
 
 ### Features
 
 - easy installation, easy to use
 - fast and lightweight
 - robust (clean urls, intelligent path redirects)
-- built in pre-processing
-- first-class layout and partial support
+- optional built in pre-processing
+- optional first-class layout and partial support
 - built in LRU caching in production mode
-- can export assets to HTML/CSS/JS
-- does not require a build steps or grunt task
+- optional can export assets to HTML/CSS/JS
+- optional does not require a build steps or grunt task
 - fun to use
-
-### Supported Pre-Processors
-
-|                 | Language Superset                                                 | Whitespace Sensitive
-| --------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------
-| **HTML**        | [EJS](http://embeddedjs.com/)                                     | [Jade](http://jade-lang.com/), [Markdown](http://daringfireball.net/projects/markdown/)
-| **CSS**         | [LESS](http://lesscss.org/), [Sass (SCSS)](http://sass-lang.com/) | [Stylus](http://learnboost.github.io/stylus/), [Sass](http://sass-lang.com/)
-| **JavaScript**  | (TBD)                                                             | [CoffeeScript](http://coffeescript.org/)
 
 ### Resources
 
-- **Server Documentation** - [harpjs.com/docs/](http://harpjs.com/docs/)
-- **Platform Documentation** - [harp.io/docs](https://harp.io/docs)
-- **Source Code** - [github.com/sintaxi/harp](https://github.com/sintaxi/harp)
+- **Server Documentation** - [server.dspeed.eu/docs/](https://server.dspeed.eu/docs/)
+- **Platform Documentation** - [hosting.dspeed.eu/docs/dssrv](https://dssrv.io/docs)
+- **Source Code** - [github.com/dssrv/dssrv](https://github.com/dssrv/dssrv)
 
 
-Authored and maintained by [@sintaxi](http://twitter.com/sintaxi). Made for the [@DIREKTSPEED ServerPlatform](http://twitter.com/DIREKTSPEED ServerPlatform).
+####twitter
+Authored and maintained by [@](http://twitter.com/). Made for the [@DIREKTSPEED](http://twitter.com/DIREKTSPEED ServerPlatform).
 
 ---
 
 ### Installation
 
-    sudo npm install -g harp
+    sudo npm install -g dssrv
 
 ### Quick Start
 
-Creating a new harp application is a breeze...
+Creating a new dssrv application is a breeze...
 
-    harp init myproj
-    harp server myproj
+    dssrv init myproj
+    dssrv server myproj
 
 Your DIREKTSPEED Server application is now running at [http://localhost:9000]()
 
@@ -62,14 +64,14 @@ DIREKTSPEED Server can be used as a library or as a command line utility.
 
 ### CLI Usage
 
-    Usage: harp [command] [options]
+    Usage: dssrv [command] [options]
 
     Commands:
 
-      init [path]                 initalize new harp application (defaults to current directory)
-      server [path] [options]     start harp server
+      init [path]                 initalize new dssrv application (defaults to current directory)
+      server [path] [options]     start dssrv server
       compile [path] [options]    compile project to static assets
-      multihost [path] [options]  start harp server to host directory of harp apps
+      multihost [path] [options]  start dssrv server to host directory of dssrv apps
 
     Options:
 
@@ -78,43 +80,43 @@ DIREKTSPEED Server can be used as a library or as a command line utility.
 
 Start the server in root of your application by running...
 
-    harp server
+    dssrv server
 
 You may optionally supply a port to listen on...
 
-    harp server --port 8002
+    dssrv server --port 8002
 
 Compile an application from the root of your application by running...
 
-    harp compile
+    dssrv compile
 
 You may optionally pass in a path to where you want the compiled assets to go...
 
-    harp compile --output /path/to/cordova/project/www
+    dssrv compile --output /path/to/cordova/project/www
 
 ### Lib Usage
 
-You may also use harp as a node library for compiling or running as a server.
+You may also use dssrv as a node library for compiling or running as a server.
 
-Serve up a harp application...
+Serve up a dssrv application...
 
 ```js
-var harp = require("harp")
-harp.server(projectPath [,args] [,callback])
+var dssrv = require("dssrv")
+dssrv.server(projectPath [,args] [,callback])
 ```
 
-**Or** compile harp application
+**Or** compile dssrv application
 
 ```js
-var harp = require("harp")
-harp.compile(projectPath [,outputPath] [, callback])
+var dssrv = require("dssrv")
+dssrv.compile(projectPath [,outputPath] [, callback])
 ```
 
 **Or** use as Connect/ExpressJS middleware
 
 ```js
 var express = require("express");
-var harp = require("harp");
+var dssrv = require("dssrv");
 var app = express();
 ```
 
@@ -122,7 +124,7 @@ var app = express();
 // Express 3
 app.configure(function(){ 
   app.use(express.static(__dirname + "/public"));
-  app.use(harp.mount(__dirname + "/public"));
+  app.use(dssrv.mount(__dirname + "/public"));
 });
 ```
 
@@ -130,7 +132,7 @@ app.configure(function(){
 // Express 4
 
 app.use(express.static(__dirname + "/public"));
-app.use(harp.mount(__dirname + "/public"));
+app.use(dssrv.mount(__dirname + "/public"));
 
 ```
 
