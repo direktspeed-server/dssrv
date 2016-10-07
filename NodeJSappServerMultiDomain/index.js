@@ -1,0 +1,6 @@
+/*
+  This example shows how to run a bunch of example express apps on diffrent domains
+  via the SocketCluster enhanced HTTP Server Instance
+  
+  It Demonstrates how to run a MultiHost SocketCluster with diffrent domains and Applications. 
+*/
