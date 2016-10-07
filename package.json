@@ -1,6 +1,6 @@
 {
   "name": "dssrv",
-  "version": "1.2.9",
+  "version": "1.3.0",
   "description": "DIREKTSPEED Server https://dspeed.eu",
   "author": "Frank Lemanschik <frank@dspeed.eu",
   "contributors": [
@@ -27,11 +27,11 @@
     "Docker"
   ],
   "homepage": "http://dspeed.eu",
-  "bugs": "https://github.com/frank-dspeed/dssrv/issues",
+  "bugs": "https://github.com/dssrv/dssrv/issues",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frank-dspeed/dssrv.git"
+    "url": "git+https://github.com/dssrv/dssrv.git"
   },
   "dependencies": {
     "async": "^2.0.1",
