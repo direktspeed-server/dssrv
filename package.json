@@ -1,18 +1,25 @@
 {
   "name": "dssrv",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "DIREKTSPEED Server https://dspeed.eu",
   "author": "Frank Lemanschik <frank@dspeed.eu",
-  "contributors":
-  [ 
-    "Watch CONTRIBUTORS.md file"
-  , "Frank Lemanschik <frank@dspeed.eu>" 
+  "contributors": [
+    "Watch CONTRIBUTORS.md file",
+    "Frank Lemanschik <frank@dspeed.eu>"
   ],
   "keywords": [
     "Server",
     "static site generator",
     "preprocessing web server",
-    "sass", "less", "stylus", "markdown", "jade", "ejs", "coffeescript", "pug", "CanJS",
+    "sass",
+    "less",
+    "stylus",
+    "markdown",
+    "jade",
+    "ejs",
+    "coffeescript",
+    "pug",
+    "CanJS",
     "StealJS",
     "DoneJS",
     "DietJS",
