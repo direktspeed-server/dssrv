@@ -9,6 +9,12 @@
  *  
  * * server 
  * * server 
+ * Concept cli-parser try first to find bin in node_modules local
+ * try then to find bin in node_modules global
+ * try then to find bin in path. 
+ *  try same chain with bin-cmd-cmd and reduce to bin only 
+ * fails
+ * 
  */
 // needs reading of $PWD for accepting .
 
