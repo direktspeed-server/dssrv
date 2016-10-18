@@ -19,7 +19,7 @@
 // needs reading of $PWD for accepting .
 
 var program = require('../lib/cli');
-
+console.log(process.argv)
 program.parse(process.argv);
 
 if (!program.args.length) {
