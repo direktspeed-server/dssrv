@@ -8,23 +8,22 @@ DIREKTSPEED - SERVER a NODE.JS Application Server and Server Stack Framework usi
 
 
 
-![DoneJS logo](https://donejs.com/static/img/donejs-logo-black.svg)
-
 [![npm version](https://badge.fury.io/js/donejs.svg)](https://badge.fury.io/js/donejs)
 [![Build Status](https://travis-ci.org/donejs/donejs.svg?branch=master)](https://travis-ci.org/donejs/donejs)
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/donejs/donejs?branch=master&svg=true)](https://ci.appveyor.com/project/daffl/donejs)
 [![Coverage Status](https://coveralls.io/repos/github/donejs/donejs/badge.svg?branch=cli-refactor)](https://coveralls.io/github/donejs/donejs?branch=master)
 
-DoneJS is the easiest way to get a high performance, real time, web and mobile application
-done! The framework provides a nearly comprehensive combination of technologies for
-building complex JavaScript applications.
+DIREKTSPEED is the easiest way to get a high performance, real time, web and mobile application
+done and Hosted! The framework provides a nearly comprehensive combination of technologies for
+building complex JavaScript applications and Running them as Also Pack and Ship Them.
 
 If you are looking for the fastest way to get a fully modern development environment setup
 and produce a lightning fast application, you've come to the right place.
 
-DoneJS is a combination of the following technologies:
+DIREKTSPEED is a combination of the following technologies:
 
 - [StealJS](http://stealjs.com) - ES6, CJS, and AMD module loader and builder
+- [steal-ssr](https://github.com/canjs/ssr) - Server-side rendering for Steal loaded Projects.
 - [CanJS](https://canjs.com) - Custom elements and model-view-viewmodel (MVVM) utilities
 - [jQuery](https://jquery.com/) - DOM helpers
 - [jQuery++](http://jquerypp.com) - Extended DOM helpers
@@ -32,7 +31,7 @@ DoneJS is a combination of the following technologies:
 - [FuncUnit](https://funcunit.com/) - Functional tests
 - [Testee](https://github.com/bitovi/testee) or [Karma](https://karma-runner.github.io/) - Test runner
 - [DocumentJS](http://documentjs.com) - Documentation
-- [can-ssr](https://github.com/canjs/ssr) - Server-side rendering utilities for CanJS
+
 
 DoneJS is a `npm` package that simply installs all the previous
 technologies.  This site exists to explain the collective benefits of these technologies
@@ -69,7 +68,7 @@ _Maintenance features:_
 
 #### Getting Started Guide ([Guide main article])
 
-The DoneJS Getting Started Guide walks you through creating a [PlaceMyOrder](http://place-my-order.com) application.
+DIREKTSPEED has Getting Started Guides walktroughts for you [PlaceMyOrder](http://place-my-order.com) application.
 
 1. Install
    1. Set up server
