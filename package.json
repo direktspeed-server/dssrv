@@ -41,7 +41,7 @@
     "cross-spawn": "5.0.1",
     "download-github-repo": "0.1.3",
     "dssrv-envy-json": "0.2.1",
-    "dssrv-prerender": "1.1.2",
+    "dssrv-prerender": "1.3.5",
     "dssrv-srv-prerender": "1.0.0",
     "escape-html": "1.0.3",
     "express": "4.0.0",
