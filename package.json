@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "async": "^2.0.1",
-    "chalk": "2.3.1",
+    "chalk": "2.4.2",
     "basic-auth": "2.0.0",
     "commander": "2.12.2",
     "cross-spawn": "5.1.0",
