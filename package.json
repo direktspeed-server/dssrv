@@ -62,7 +62,7 @@
     "request": "2.83.0",
     "should": "13.1.3",
     "coveralls-send": "0.0.2",
-    "documentjs": "0.5.1",
+    "documentjs": "0.5.5",
     "dotdotdot": "1.7.0",
     "es6-promise": "4.1.1",
     "guide-automation": "0.3.11",
